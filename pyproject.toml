@@ -1,0 +1,27 @@
+[project]
+name="botify"
+description="Official wrapper for the Botify API"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+readme = "README.md"
+keywords = ["botify", "discord", "bot", "api"]
+authors = [
+    { name = "Timo" }
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dynamic = ["dependencies", "version"]
+[tool.setuptools.dynamic]
+version = {attr = "aenox.__version__"}
+dependencies = {file = "requirements.txt"}
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"

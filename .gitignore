@@ -2,6 +2,10 @@
 __pycache__/
 *.py[cod]
 *$py.class
+/dist
+/.idea
+/botify.egg-info
+/botify/__pycache__
 
 # C extensions
 *.so
