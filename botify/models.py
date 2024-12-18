@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from dataclasses import dataclass
 from datetime import date
 
@@ -5,32 +7,51 @@ from datetime import date
 @dataclass
 class UserStats:
     user_id: int
-    coins: int
-    allTimeMessages: int
-    cooldownMiner: date
-    cooldownSmelter: date
-    dailyClaimed: date
-    dailyStreak: int
-    historyCoins: []
-    historyMessages: []
-    inventory: []
-    luck: int
-    maxInventorySize: int
-    messages: int
-    pickaxeLevel: int
-    shields: int
-    smelterLevel: int
+    max_streak: int
+    streak: int
+    cookies: int
+    career: str
+    total_shifts: int
+    job: str
 
 
 @dataclass
-class GuildStats:
+class MemberStats:
+    user_id: int
     guild_id: int
-    language: str
-    in_guild: bool
-    autoroles: []
-    ticket_transcript: bool
-    ticket_categorys: []
-    ticket_embed_channel: str
-    ticket_embed_id: str
-    ticket_category_id: str
-    enabled_modules: []
+    level: int
+    xp: int
+    msg_count: int
+    voice_min: int
+    voice_xp: int
+    voice_level: int
+    current_level_progress: int
+    current_level_end: int
+    msg_rank: int
+    msg_total_members: int
+    voice_rank: int
+    voice_total_members: int
+
+
+@dataclass
+class MemberActivity:
+    days: int
+    user_id: int
+    guild_id: int
+    msg_activity: dict[date, int]
+    voice_activity: dict[date, int]
+    msg_count: int
+    voice_min: int
+    msg_rank: int
+    voice_rank: int
+    current_voice_min: int
+
+
+@dataclass
+class GuildActivity:
+    days: int
+    guild_id: int
+    msg_activity: dict[date, int]
+    voice_activity: dict[date, int]
+    msg_count: int
+    voice_min: int
