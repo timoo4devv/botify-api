@@ -42,13 +42,13 @@ def _handle_error(response: httpx.Response):
         raise BotifyError(response)
 
 
-class BotifyAPI:
+class AsyncBotifyAPI:
     """A class to interact with the Cookie API.
 
     Parameters
     ----------
     api_key:
-        The API key to use. If no key is provided, ``COOKIE_KEY`` is loaded from the environment.
+        The API key to use. If no key is provided, ``BOTIFY_KEY`` is loaded from the environment.
     session:
         An existing aiohttp session to use.
     """
@@ -239,13 +239,13 @@ class BotifyAPI:
         )
 
 
-class CookieAPI:
+class BotifyAPI:
     """A class to interact with the Cookie API.
 
     Parameters
     ----------
     api_key:
-        The API key to use. If no key is provided, ``COOKIE_KEY`` is loaded from the environment.
+        The API key to use. If no key is provided, ``BOTIFY_KEY`` is loaded from the environment.
     httpx_client:
         An existing httpx client to use.
     """
